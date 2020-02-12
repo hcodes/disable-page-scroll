@@ -5,9 +5,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
   <link rel="stylesheet" href="../src/index.css" />
+  <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .controls {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding: 10px;
+            background-color: white;
+        }
+  </style>
 </head>
 <body>
-    <div style="position: fixed; left: 0; right: 0; top: 0; padding: 10px; background-color: white;">
+    <div class="controls">
         <input type="button" id="disable" value="Disable page scroll" />
         <input type="button" id="enable" disabled value="Enable page scroll" />
     </div>
