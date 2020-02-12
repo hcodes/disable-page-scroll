@@ -1,0 +1,11 @@
+.disable-page-scroll {
+    overscroll-behavior: none;
+    overflow: hidden;
+}
+
+.disable-page-scroll_ios {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
