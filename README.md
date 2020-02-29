@@ -5,7 +5,7 @@
 
 Disable page scroll in browsers on mobile phones.
 
-Especially for Mobile Safari on iOS.
+Especially for Mobile Safari on iOS with iframes.
 
 ## Install
 ```
