@@ -1,12 +1,13 @@
 {
   "name": "disable-page-scroll",
   "description": "Disable page scroll on mobile phones",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Denis Seleznev",
     "email": "hcodes@yandex.ru",
     "url": "https://github.com/hcodes/disable-page-scroll"
   },
+  "typings": "dist/index.d.ts",
   "main": "dist/index.common.js",
   "module": "dist/index.esm.js",
   "homepage": "https://github.com/hcodes/disable-page-scroll",
@@ -16,8 +17,8 @@
     "url": "git://github.com/hcodes/disable-page-scroll.git"
   },
   "keywords": [
-    "disable-scroll",
-    "page-scroll"
+    "disable page scroll",
+    "page scroll"
   ],
   "engines": {
     "node": ">= 8"
@@ -27,25 +28,25 @@
     "dist/index.css",
     "dist/index.esm.js",
     "dist/index.common.js",
-    "typings/index.d.ts",
+    "dist/index.d.ts",
     "README.md",
     "LICENSE"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "@typescript-eslint/parser": "^4.23.0",
-    "eslint": "^7.26.0",
-    "rollup": "^2.47.0",
-    "rollup-plugin-typescript": "^1.0.1",
-    "tslib": "^2.2.0",
-    "typescript": "^4.2.4"
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
+    "eslint": "^9.30.1",
+    "rollup": "^4.44.2",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.36.0"    
   },
   "scripts": {
     "test": "eslint --ext .ts .",
-    "build": "npm run build:esm && npm run build:common && npm run build:demo && npm run copy-css",
-    "build:esm": "rollup src/index.ts --config rollup.config.js --file dist/index.esm.js --format esm",
-    "build:common": "rollup src/index.ts --config rollup.config.js --file dist/index.common.js --format commonjs",
-    "build:demo": "rollup demo/index.ts --config rollup.config.js --file demo/index.js --format commonjs",
+    "build": "npm run build:esm && npm run build:common && npm run copy-css",
+    "build:esm": "rollup src/index.ts --config rollup.config.mjs --file dist/index.esm.js --format esm",
+    "build:common": "rollup src/index.ts --config rollup.config.mjs --file dist/index.common.js --format commonjs",
     "copy-css": "cp ./src/index.css ./dist/"
   }
 }

@@ -1,20 +1,22 @@
-module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-    }
-};
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
+export default [
+  {
+    ignores: [
+      '.*',
+      'dist/**',
+      'node_modules/**',
+      '*.config.js'
+    ]
+  },
+  {
+    files: ['**/*.{js,mjs,cjs,ts}']
+  },
+  {
+    languageOptions: { globals: globals.browser }
+  },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+];
