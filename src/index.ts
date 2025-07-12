@@ -1,7 +1,19 @@
 const blockName = 'disable-page-scroll';
 const blockNameIOS = 'disable-page-scroll_ios';
 
-const isIOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+function isIOS() {
+    if (typeof navigator == 'undefined') {
+        return false;
+    }
+
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        return true;
+    }
+
+    return Boolean(navigator.maxTouchPoints &&
+        navigator.maxTouchPoints > 2 &&
+        /MacIntel/.test(navigator.platform));
+}
 
 let marginLeft = '';
 let marginTop = '';
@@ -13,7 +25,7 @@ export function disablePageScroll() {
     const body = document.body;
     body.classList.add(blockName);
 
-    if (isIOS) {
+    if (isIOS()) {
         scrollX = window.scrollX;
         scrollY = window.scrollY;
 
@@ -31,7 +43,7 @@ export function enablePageScroll() {
     const body = document.body;
     body.classList.remove(blockName);
 
-    if (isIOS) {
+    if (isIOS()) {
         body.classList.remove(blockNameIOS);
 
         body.style.marginLeft = marginLeft;
