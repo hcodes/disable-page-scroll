@@ -1,7 +1,7 @@
 {
   "name": "disable-page-scroll",
   "description": "Disable page scroll on mobile phones",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Denis Seleznev",
     "email": "hcodes@yandex.ru",
@@ -17,6 +17,9 @@
     "url": "git://github.com/hcodes/disable-page-scroll.git"
   },
   "keywords": [
+    "off scroll",
+    "off page scroll",
+    "disable scroll",
     "disable page scroll",
     "page scroll"
   ],

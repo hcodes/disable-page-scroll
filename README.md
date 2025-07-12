@@ -6,6 +6,8 @@ Disable page scroll in browsers on mobile phones.
 
 Especially for Mobile Safari on iOS with iframes.
 
+The package has an extra small size.
+
 ## Install
 ```
 npm i --save disable-page-scroll
